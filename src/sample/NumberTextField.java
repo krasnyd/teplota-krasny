@@ -29,17 +29,24 @@ public class NumberTextField extends TextField
                 continue;
             }
             switch (str.charAt(i)){
-                case '-':
                 case '.':
                 case ',':
-                case 'e':
-                case 'E':
                     break;
                 default:
                     return false;
             }
         }
         return true;
+    }
 
+    public double getValue(){
+        String text = this.getText();
+        text = text.replace(",", ".");
+        try {
+            return Double.parseDouble(text);
+        } catch (NumberFormatException ex){
+            System.out.println("nevalidní hodnota");
+        }
+        return 0;
     }
 }

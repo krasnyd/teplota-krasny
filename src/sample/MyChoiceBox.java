@@ -2,34 +2,28 @@ package sample;
 
 import javafx.scene.control.ChoiceBox;
 
-public class MyChoiceBox extends ChoiceBox<String> {
-    private Jednotky selected = Jednotky.CELSIUS;
+public class MyChoiceBox extends ChoiceBox<String>{
+    private Jednotka selected = Jednotka.CELSIUS;
 
-    public Jednotky getSelected() {
+    public Jednotka getSelected() {
         return selected;
     }
 
     public void setSelected(String value) {
         switch (value) {
             case "°C":
-                this.selected = Jednotky.CELSIUS;
+                this.selected = Jednotka.CELSIUS;
                 break;
             case "°F":
-                this.selected = Jednotky.FAHRENHEIT;
+                this.selected = Jednotka.FAHRENHEIT;
                 break;
             case "K":
-                this.selected = Jednotky.KELVIN;
+                this.selected = Jednotka.KELVIN;
                 break;
             default:
                 System.out.println("Neznámá jednotka");
                 break;
         }
 
-    }
-
-    public enum Jednotky {
-        CELSIUS,
-        FAHRENHEIT,
-        KELVIN
     }
 }
