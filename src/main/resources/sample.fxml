@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import sample.MyChoiceBox?>
-<?import sample.NumberTextField?>
+<?import david.fyz.MyChoiceBox?>
+<?import david.fyz.NumberTextField?>
 
-<BorderPane prefHeight="225.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane prefHeight="225.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.fyz.Controller">
    <top>
     <VBox alignment="TOP_CENTER">
       <Label text="Převody teplotních jednotek" BorderPane.alignment="CENTER">
