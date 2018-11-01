@@ -31,6 +31,7 @@ public class NumberTextField extends TextField
             switch (str.charAt(i)){
                 case '.':
                 case ',':
+                case '-':
                     break;
                 default:
                     return false;

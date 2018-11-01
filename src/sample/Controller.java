@@ -7,6 +7,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -17,6 +18,9 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        inputField.setText("0");
+        outputField.setText("0");
+
         inputField.textProperty().addListener((observable, oldValue, newValue) -> {
             recalculate();
         });
@@ -44,10 +48,23 @@ public class Controller implements Initializable {
             outputValue = inputValue + 273.15;
         } else if(inputJednotka == Jednotka.CELSIUS && outputJednotka == Jednotka.FAHRENHEIT){
             outputValue = 1.8 * (inputValue) + 32;
+        } else if(inputJednotka == Jednotka.KELVIN && outputJednotka == Jednotka.CELSIUS){
+            outputValue = inputValue - 273.15;
+        } else if(inputJednotka == Jednotka.KELVIN && outputJednotka == Jednotka.FAHRENHEIT){
+            outputValue = inputValue * 1.8 - 459.67;
+        } else if(inputJednotka == Jednotka.FAHRENHEIT && outputJednotka == Jednotka.CELSIUS){
+            outputValue = (inputValue - 32) / 1.8;
+        } else if(inputJednotka == Jednotka.FAHRENHEIT && outputJednotka == Jednotka.KELVIN){
+            outputValue = (inputValue + 459.67) * 5/9;
         } else {
-            System.out.println("unsup");
+            outputValue = inputValue;
         }
 
-        outputField.setText(Double.toString(outputValue));
+        outputField.setText(beautifulPrint(outputValue));
+    }
+
+    private String beautifulPrint(double num){
+        DecimalFormat f = new DecimalFormat("##.00");
+        return f.format(num);
     }
 }
