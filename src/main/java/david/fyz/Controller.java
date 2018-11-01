@@ -39,7 +39,7 @@ public class Controller implements Initializable {
         Jednotka outputJednotka = outputType.getSelected();
         System.out.println(inputJednotka + " to " + outputJednotka);
 
-        double outputValue = 0;
+        double outputValue;
         if(inputJednotka == Jednotka.CELSIUS && outputJednotka == Jednotka.KELVIN){
             outputValue = inputValue + 273.15;
         } else if(inputJednotka == Jednotka.CELSIUS && outputJednotka == Jednotka.FAHRENHEIT){

@@ -40,7 +40,7 @@ public class NumberTextField extends TextField
         return true;
     }
 
-    public double getValue(){
+    double getValue(){
         String text = this.getText();
         text = text.replace(",", ".");
         try {

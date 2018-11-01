@@ -5,11 +5,11 @@ import javafx.scene.control.ChoiceBox;
 public class MyChoiceBox extends ChoiceBox<String>{
     private Jednotka selected = Jednotka.CELSIUS;
 
-    public Jednotka getSelected() {
+    Jednotka getSelected() {
         return selected;
     }
 
-    public void setSelected(String value) {
+    void setSelected(String value) {
         switch (value) {
             case "°C":
                 this.selected = Jednotka.CELSIUS;
