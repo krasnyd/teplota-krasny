@@ -29,7 +29,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <NumberTextField fx:id="inputField" value="0"/>
+            <NumberTextField fx:id="inputField"/>
             <MyChoiceBox prefWidth="150.0" GridPane.columnIndex="1" value="°C" fx:id="inputType">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -39,7 +39,7 @@
                     </FXCollections>
                 </items>
             </MyChoiceBox>
-            <NumberTextField GridPane.columnIndex="3" fx:id="outputField" editable="false" value="0"/>
+            <NumberTextField GridPane.columnIndex="3" fx:id="outputField" editable="false"/>
             <MyChoiceBox prefWidth="150.0" GridPane.columnIndex="4" value="°C" fx:id="outputType">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
