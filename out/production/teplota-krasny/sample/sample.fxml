@@ -9,6 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import sample.NumberTextField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import sample.MyChoiceBox?>
 <BorderPane prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
       <Label text="Label" BorderPane.alignment="CENTER" />
@@ -26,10 +29,26 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <NumberTextField />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" />
-            <NumberTextField GridPane.columnIndex="3" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" />
+            <NumberTextField fx:id="inputField"/>
+            <MyChoiceBox prefWidth="150.0" GridPane.columnIndex="1" value="°C" fx:id="inputType">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="°C" />
+                        <String fx:value="°F" />
+                        <String fx:value="K" />
+                    </FXCollections>
+                </items>
+            </MyChoiceBox>
+            <NumberTextField GridPane.columnIndex="3" fx:id="outputField" editable="false"/>
+            <MyChoiceBox prefWidth="150.0" GridPane.columnIndex="4" value="°C" fx:id="outputType">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="°C" />
+                        <String fx:value="°F" />
+                        <String fx:value="K" />
+                    </FXCollections>
+                </items>
+            </MyChoiceBox>
          </children>
       </GridPane>
    </center>
