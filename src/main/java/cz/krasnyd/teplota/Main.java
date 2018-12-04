@@ -1,4 +1,4 @@
-package david.fyz;
+package cz.krasnyd.teplota;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

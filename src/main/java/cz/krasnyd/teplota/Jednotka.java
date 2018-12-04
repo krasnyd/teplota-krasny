@@ -1,4 +1,4 @@
-package david.fyz;
+package cz.krasnyd.teplota;
 
 public enum Jednotka {
     CELSIUS,
